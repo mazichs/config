@@ -1,0 +1,23 @@
+[user]
+	name = Stephen Mazich
+	email = stephen.mazich@gmail.com
+[core]
+	editor = vim
+	autocrlf = false
+	safecrlf = true
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+[cola]
+	fontdiff = Terminess Powerline,11,-1,5,50,0,0,0,0,0
+	tabwidth = 4
+	textwidth = 78
+[gui]
+	historybrowser = gitk
+[merge]
+	tool = xxdiff
