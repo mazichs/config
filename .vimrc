@@ -50,17 +50,11 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_java_javac_config_file_enabled = 1
 nmap \c :SyntasticToggleMode<CR>
 
-Plugin 'tpope/vim-fugitive' 
-
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'} 
 set laststatus=2
 set t_Co=256
 
 Plugin 'altercation/vim-colors-solarized' 
-
-Plugin 'godlygeek/tabular' 
-
-Plugin 'mileszs/ack.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
