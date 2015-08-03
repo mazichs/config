@@ -56,6 +56,8 @@ set t_Co=256
 
 Plugin 'altercation/vim-colors-solarized' 
 
+Plugin 'scrooloose/nerdcommenter'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 "--------------
