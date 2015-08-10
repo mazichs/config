@@ -1,27 +1,31 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"																		 "
-" Stephen Mazich Vi Improved Configuration (VIMRC)						 "
-" Copyright 2015 Stephen Mazich											 "
-"																		 "
-"   Licensed under the "THE BEER-WARE LICENSE" (Revision 42):			 "
-"   Stephen Mazich wrote this file. As long as you retain this notice	 "
-"   you can do whatever you want with this stuff. If we meet some		 "
-"   day, and you think this stuff is worth it, you can buy me a			 "
-"   beer in return.														 "
-"																		 "
-" Maintainer:															 "
-"   Stephen Mazich <stephen.mazich@gmail.com>							 "
-"																		 "
-" Version: 1.2															 "
-"																		 "
-" Created: 07/09/2015													 "
-"																		 "
-" History:                                                               "
-"  07/09/2015 -- Stephen Mazich											 "
-"    File created with settings from previous vimrc.					 "
-"    Version number respects previous iterations of vimrc files.		 "
-"																		 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"																		"
+" Stephen Mazich Vi Improved Configuration (VIMRC)						"
+" Copyright 2015 Stephen Mazich											"
+"																		"
+"   Licensed under the "THE BEER-WARE LICENSE" (Revision 42):			"
+"   Stephen Mazich wrote this file. As long as you retain this notice	"
+"   you can do whatever you want with this stuff. If we meet some		"
+"   day, and you think this stuff is worth it, you can buy me a			"
+"   beer in return.														"
+"																		"
+" Maintainer:															"
+"   Stephen Mazich <stephen.mazich@gmail.com>							"
+"																		"
+" Version: 1.2															"
+"																		"
+" Created: 07/09/2015													"
+"																		"
+" History:                                                              "
+"  07/09/2015 -- Stephen Mazich											"
+"    File created with settings from previous vimrc.					"
+"    Version number respects previous iterations of						"
+"    non licensed vimrc files.											"
+"																		"
+"  08/10/2015 -- Stephen Mazich											"
+"    Plugin Changes														"
+"																		"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -50,13 +54,17 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_java_javac_config_file_enabled = 1
 nmap \c :SyntasticToggleMode<CR>
 
+Plugin 'scrooloose/nerdcommenter'
+
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'} 
 set laststatus=2
 set t_Co=256
 
 Plugin 'altercation/vim-colors-solarized' 
 
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'ervandew/supertab'
+
+Plugin 'sickill/vim-pasta'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
