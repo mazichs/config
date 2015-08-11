@@ -31,9 +31,9 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-"--------------
-"Vundle Settings
-"--------------
+"---------------------
+"-- Vundle Settings --
+"---------------------
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -66,11 +66,13 @@ Plugin 'ervandew/supertab'
 
 Plugin 'sickill/vim-pasta'
 
+Plugin 'tpope/vim-fugitive'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
-"--------------
-"Vundle Settings
-"--------------
+"---------------------
+"-- Vundle Settings --
+"---------------------
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
