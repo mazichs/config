@@ -21,3 +21,5 @@
 	historybrowser = gitk
 [merge]
 	tool = xxdiff
+[http]
+	postBuffer = 512000000

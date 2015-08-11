@@ -57,6 +57,9 @@ nmap \c :SyntasticToggleMode<CR>
 Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'} 
+"Plugin 'bling/vim-airline'
+"let g:airline_powerline_fonts = 1
+"let g:airline_theme = 'solarized'
 set laststatus=2
 set t_Co=256
 
@@ -66,7 +69,7 @@ Plugin 'ervandew/supertab'
 
 Plugin 'sickill/vim-pasta'
 
-Plugin 'tpope/vim-fugitive'
+"Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -77,13 +80,13 @@ filetype plugin indent on    " required
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set history=100		" keep 100 lines of command line history
-set ruler			" show the cursor position all the time
-set showcmd			" display incomplete commands
-set incsearch		" do incremental searching
-set wrapscan 		" search after EOF
-set backup			" keep a backup file
-set backupdir=~/.vim/backup "keep backups in a dir to avoid clutter
+set history=100				" keep 100 lines of command line history
+set ruler					" show the cursor position all the time
+set showcmd					" display incomplete commands
+set incsearch				" do incremental searching
+set wrapscan				" search after EOF
+set backup					" keep a backup file
+set backupdir=~/.vim/backup	"keep backups in a dir to avoid clutter
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -214,4 +217,3 @@ let g:solarized_underline  = 1
 let g:solarized_italic     = 1
 let g:solarized_contrast   = "normal"
 let g:solarized_visibility = "normal"
-
