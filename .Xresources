@@ -1,8 +1,7 @@
 ! Urxvt ------------------------------------------------------------
 URxvt.depth: 32
 URxvt.scrollstyle: plain
-!URxvt*font: xft:Terminus:pixelsize=12,xft:Inconsolata\ for\ Powerline:pixelsize=12
-URxvt*font: xft:Terminess\ Powerline:pixelsize=13
+URxvt*font: xft:Terminess\ Powerline:pixelsize=12
 URxvt*internalBorder: 0
 
 ! URxvt-Perls ------------------------------------------------------
