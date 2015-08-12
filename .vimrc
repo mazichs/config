@@ -69,8 +69,6 @@ Plugin 'ervandew/supertab'
 
 Plugin 'sickill/vim-pasta'
 
-"Plugin 'ryanoasis/vim-devicons'
-
 call vundle#end()            " required
 filetype plugin indent on    " required
 "---------------------
