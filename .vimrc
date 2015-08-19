@@ -196,6 +196,7 @@ nmap <F3> :noh<CR>
 :command W w
 :command Q q
 set hlsearch
+au BufNewFile,BufRead *.gradle setf groovy
 
 "disable that damn beeping
 set noerrorbells visualbell t_vb=
