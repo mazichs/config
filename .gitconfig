@@ -17,9 +17,5 @@
 	fontdiff = Terminess Powerline,11,-1,5,50,0,0,0,0,0
 	tabwidth = 4
 	textwidth = 78
-[gui]
-	historybrowser = gitk
-[merge]
-	tool = xxdiff
 [http]
 	postBuffer = 512000000
