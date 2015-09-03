@@ -39,11 +39,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'kien/ctrlp.vim' 
+Plugin 'kien/ctrlp.vim'
 
-Plugin 'scrooloose/nerdtree' 
+Plugin 'scrooloose/nerdtree'
 
-Plugin 'scrooloose/syntastic' 
+Plugin 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -56,18 +56,20 @@ nmap \c :SyntasticToggleMode<CR>
 
 Plugin 'scrooloose/nerdcommenter'
 
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'} 
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 "Plugin 'bling/vim-airline'
 "let g:airline_powerline_fonts = 1
 "let g:airline_theme = 'solarized'
 set laststatus=2
 set t_Co=256
 
-Plugin 'altercation/vim-colors-solarized' 
+Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'ervandew/supertab'
 
 Plugin 'sickill/vim-pasta'
+
+Plugin 'ntpeters/vim-better-whitespace'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -171,7 +173,7 @@ set smartcase
 set ignorecase
 "nmap <C-c> <Esc>
 nmap \e :NERDTreeToggle<CR>
-nmap \l :setlocal number!<CR>	
+nmap \l :setlocal number!<CR>
 nmap \p :set paste!<CR>
 
 " tab stuff for when those dirty heathens can't keep their shit straight
