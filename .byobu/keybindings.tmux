@@ -85,7 +85,5 @@ bind-key -n M-F12 source $BYOBU_PREFIX/share/byobu/keybindings/mouse.tmux.enable
 bind-key -n M-IC paste-buffer
 
 bind-key -n C-a new-window -n "ctrl-a" "byobu-ctrl-a"
+set -g prefix F12
 unbind-key -n C-a
-set -g prefix ^A
-set -g prefix2 ^A
-bind a send-prefix
