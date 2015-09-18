@@ -30,14 +30,14 @@
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-
+filetype off
 "---------------------
 "-- Vundle Settings --
 "---------------------
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'kien/ctrlp.vim'
 
@@ -87,13 +87,6 @@ set incsearch				" do incremental searching
 set wrapscan				" search after EOF
 set backup					" keep a backup file
 set backupdir=~/.vim/backup	"keep backups in a dir to avoid clutter
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
