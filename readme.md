@@ -18,19 +18,19 @@ Global configuration file for git.
 Standard gitingore file
 
 #### .gitmodules
-Necessary for including forked repo of Oh-My-Zsh.
+Necessary for including Robby Russell's Oh-My-Zsh.
 
 #### .gvimrc
 GUI vim specific config file.
 
 #### .oh-my-zsh
-Forked version of Robby Russell's Oh-My-Zsh.
+Robby Russell's Oh-My-Zsh with my modifications.
 
 #### readme.d
 This file.
 
 #### .vimrc
-If this repo were a Swiss Army Knife, this .vimrc file would be the main knife.
+Vim configuration file. Requires Vundle for other plugins to work.
 
 #### .Xresources
 Configuration for X. Used to customize rxvt-unicode.
