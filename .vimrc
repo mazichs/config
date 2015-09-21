@@ -57,9 +57,6 @@ nmap \c :SyntasticToggleMode<CR>
 Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-"Plugin 'bling/vim-airline'
-"let g:airline_powerline_fonts = 1
-"let g:airline_theme = 'solarized'
 set laststatus=2
 set t_Co=256
 
