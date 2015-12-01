@@ -39,8 +39,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-"Plugin 'kien/ctrlp.vim'
-
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'scrooloose/syntastic'
@@ -56,17 +54,11 @@ nmap \c :SyntasticToggleMode<CR>
 
 Plugin 'scrooloose/nerdcommenter'
 
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-set laststatus=2
-set t_Co=256
-
 Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'ervandew/supertab'
 
 Plugin 'sickill/vim-pasta'
-
-Plugin 'ntpeters/vim-better-whitespace'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -197,8 +189,9 @@ if has('autocmd')
 endif
 
 "These settings have to be kept out of Vundle Settings
+set t_Co=256
 syntax enable
-set background=dark
+"set background=dark
 colorscheme solarized
 let g:solarized_termcolors = 256
 let g:solarized_termtrans  = 1
@@ -208,3 +201,9 @@ let g:solarized_underline  = 1
 let g:solarized_italic     = 1
 let g:solarized_contrast   = "normal"
 let g:solarized_visibility = "normal"
+
+"Powerline Setup
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+set laststatus=2
