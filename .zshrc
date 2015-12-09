@@ -79,6 +79,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias tmux="tmux -2"
+
 setopt NO_BEEP
 #enables ctrl-z restore
 fancy-ctrl-z () {
@@ -92,4 +94,4 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
-
+eval "$(thefuck --alias)"
