@@ -64,6 +64,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -94,4 +95,6 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
 eval "$(thefuck --alias)"
+eval `dircolors /home/mazichs/dircolors-solarized/dircolors.ansi-dark`
