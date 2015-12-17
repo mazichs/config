@@ -26,8 +26,14 @@ GUI vim specific config file.
 #### .oh-my-zsh
 Robby Russell's Oh-My-Zsh with my modifications.
 
+#### .powerline
+Configuration files to Powerline.
+
 #### readme.d
 This file.
+
+#### .tmux.conf
+Standalone tmux configuration file. 
 
 #### .vimrc
 Vim configuration file. Requires Vundle for other plugins to work.
