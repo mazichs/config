@@ -1,5 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"																		"
 " Stephen Mazich Vi Improved Configuration (VIMRC)						"
 " Copyright 2015 Stephen Mazich											"
 "																		"
@@ -12,25 +11,15 @@
 " Maintainer:															"
 "   Stephen Mazich <stephen.mazich@gmail.com>							"
 "																		"
-" Version: 1.2															"
+" Version: 1.3															"
 "																		"
-" Created: 07/09/2015													"
-"																		"
-" History:                                                              "
-"  07/09/2015 -- Stephen Mazich											"
-"    File created with settings from previous vimrc.					"
-"    Version number respects previous iterations of						"
-"    non licensed vimrc files.											"
-"																		"
-"  08/10/2015 -- Stephen Mazich											"
-"    Plugin Changes														"
-"																		"
+" Created: 07/2015														"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
-set nocompatible
-filetype off
+set nocompatible			" required
+filetype off				" required
 "---------------------
 "-- Vundle Settings --
 "---------------------
@@ -75,7 +64,14 @@ set showcmd					" display incomplete commands
 set incsearch				" do incremental searching
 set wrapscan				" search after EOF
 set backup					" keep a backup file
-set backupdir=~/.vim/backup	"keep backups in a dir to avoid clutter
+set backupdir=~/.vim/backup	" keep backups in a dir to avoid clutter
+set ignorecase				" ignores case when searching
+set smartcase				" search is now case sensitive
+set hlsearch				" matching search results are highlighted
+set noeb vb t_vb=			" disable that damn beeping
+
+" Preffered tab setup
+set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -84,19 +80,11 @@ endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
+  " For all text files set 'textwidth' to 80 characters.
+  autocmd FileType text setlocal textwidth=80
 
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  " disable bell
+  autocmd GUIEnter * set vb t_vb=
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -107,13 +95,7 @@ if has("autocmd")
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
-
   augroup END
-
-else
-
-set autoindent		" always set autoindenting on
-
 endif " has("autocmd")
 
 " Convenient command to see the difference between the current buffer and the
@@ -124,69 +106,43 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-" Leader changes
-" This is the greatest thing ever
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>e :e<CR>
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
 
-" vp doesn't replace paste buffer
-function! RestoreRegister()
-  let @" = s:restore_reg
-  return ''
-endfunction
-function! s:Repl()
-  let s:restore_reg = @"
-  return "p@=RestoreRegister()\<cr>"
-endfunction
-vmap <silent> <expr> p <sid>Repl()
+if has('clipboard')
+  vmap <Leader>y "+y
+  vmap <Leader>d "+d
+  nmap <Leader>p "+p
+  nmap <Leader>P "+P
+  vmap <Leader>p "+p
+  vmap <Leader>P "+P
+endif
 
 nmap j gj
 nmap k gk
-set smartcase
-set ignorecase
-"nmap <C-c> <Esc>
 nmap \e :NERDTreeToggle<CR>
-nmap \l :setlocal number!<CR>
 nmap \p :set paste!<CR>
+nmap \n :set nu!<CR>
+nmap <F3> :noh<CR>
+nmap \w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 " tab stuff for when those dirty heathens can't keep their shit straight
 nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
 nmap \M :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
-nmap \w :setlocal wrap!<CR>:setlocal wrap?<CR>
-
-"line number toggle
-nmap \n :set nu!<CR>
-
-" gold standard in tabs. also fuck spaces
-set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-
-"clears highlighting
-nmap <F3> :noh<CR>
 
 "fat fingers remapping
 :command WQ wq
 :command Wq wq
 :command W w
 :command Q q
-set hlsearch
-au BufNewFile,BufRead *.gradle setf groovy
 
-"disable that damn beeping
-set noerrorbells visualbell t_vb=
-if has('autocmd')
-	autocmd GUIEnter * set visualbell t_vb=
-endif
+" Filetype syntax
+au BufNewFile,BufRead *.gradle setf groovy
 
 "These settings have to be kept out of Vundle Settings
 set t_Co=256
