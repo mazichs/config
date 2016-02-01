@@ -28,8 +28,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/nerdtree'
-
 Plugin 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -55,23 +53,20 @@ filetype plugin indent on    " required
 "-- Vundle Settings --
 "---------------------
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+set backspace=indent,eol,start	" allow backspacing over everything in insert modet
+set history=100					" keep 100 lines of command line history
+set ruler						" show the cursor position all the time
+set showcmd						" display incomplete commands
+set incsearch					" do incremental searching
+set wrapscan					" search after EOF
+set backup						" keep a backup file
+set backupdir=~/.vim/backup		" keep backups in a dir to avoid clutter
+set ignorecase					" ignores case when searching
+set smartcase					" search is now case sensitive
+set hlsearch					" matching search results are highlighted
+set noeb vb t_vb=				" disable that damn beeping
 
-set history=100				" keep 100 lines of command line history
-set ruler					" show the cursor position all the time
-set showcmd					" display incomplete commands
-set incsearch				" do incremental searching
-set wrapscan				" search after EOF
-set backup					" keep a backup file
-set backupdir=~/.vim/backup	" keep backups in a dir to avoid clutter
-set ignorecase				" ignores case when searching
-set smartcase				" search is now case sensitive
-set hlsearch				" matching search results are highlighted
-set noeb vb t_vb=			" disable that damn beeping
-
-" Preffered tab setup
-set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4	" Preffered tab setup
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -80,8 +75,8 @@ endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-  " For all text files set 'textwidth' to 80 characters.
-  autocmd FileType text setlocal textwidth=80
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
 
   " disable bell
   autocmd GUIEnter * set vb t_vb=
@@ -111,6 +106,12 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>e :e<CR>
+nnoremap <silent> <Leader>j :wincmd w<CR>
+nnoremap <silent> <Leader>k :wincmd W<CR>
+nnoremap <silent> <Leader>h :wincmd r<CR>
+nnoremap <silent> <Leader>l :wincmd R<CR>
+nnoremap <Leader>i :vsp<CR>
+nnoremap <Leader>o :sp<CR>
 
 if has('clipboard')
   vmap <Leader>y "+y
