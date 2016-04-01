@@ -17,5 +17,3 @@
 	fontdiff = Terminess Powerline,11,-1,5,50,0,0,0,0,0
 	tabwidth = 4
 	textwidth = 78
-[http]
-	postBuffer = 512000000

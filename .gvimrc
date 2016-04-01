@@ -1,1 +1,0 @@
-set guifont=Terminess\ Powerline

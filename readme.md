@@ -8,39 +8,29 @@ This github repository is for syncing config files across machines.
 #### .astylerc
 Used for consistent formatting across C, C++, and Java source code.
 
-#### .byobu
-A configuration layer for tmux.
-
 #### .gitconfig
 Global configuration file for git.
 
-#### .gitignore
-Standard gitingore file
-
 #### .gitmodules
-Necessary for including Robby Russell's Oh-My-Zsh.
-
-#### .gvimrc
-GUI vim specific config file.
+Git submodule file for including Robby Russell's Oh-My-Zsh.
 
 #### .oh-my-zsh
 Robby Russell's Oh-My-Zsh with my modifications.
 
 #### .powerline
-Configuration files to Powerline.
+Configuration files for Powerline.
 
-#### readme.d
+#### readme.md
 This file.
 
 #### .tmux.conf
-Standalone tmux configuration file. 
+Tmux configuration file. 
 
 #### .vimrc
-Vim configuration file. Requires Vundle for other plugins to work.
+Vim configuration file. Requires Vim-Plug for other plugins to work properly.
 
 #### .Xresources
 Configuration for X. Used to customize rxvt-unicode.
 
 #### .zshrc
 Configuration for zsh.
-
