@@ -3,7 +3,7 @@ URxvt.depth: 32
 URxvt.scrollBar_right: true
 URxvt.scrollstyle: plain
 URxvt.scrollBar: false
-URxvt*font: xft:Terminess\ Powerline:pixelsize=13
+URxvt*font: xft:Terminess\ Powerline:pixelsize=15
 URxvt*internalBorder: 0
 
 ! URxvt-Perls ------------------------------------------------------
