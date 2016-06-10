@@ -24,7 +24,7 @@ Configuration files for Powerline.
 This file.
 
 #### .tmux.conf
-Tmux configuration file. 
+Tmux configuration file.
 
 #### .vimrc
 Vim configuration file. Requires Vim-Plug for other plugins to work properly.
