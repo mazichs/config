@@ -11,7 +11,7 @@
 " Maintainer:                                                           "
 "   Stephen Mazich <stephen.mazich@gmail.com>                           "
 "                                                                       "
-" Version: 1.4                                                          "
+" Version: 1.5                                                          "
 "                                                                       "
 " Created: 07/2015                                                      "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -127,8 +127,8 @@ endif
 
 nmap j gj
 nmap k gk
-nmap \n :set nu!<CR>
-nmap \c :noh<CR>
+nmap <silent>\n :set nu!<CR>
+nmap <silent>\c :noh<CR>
 
 "fat fingers remapping
 :command WQ wq
