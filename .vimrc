@@ -61,7 +61,6 @@ set ruler                       " show the cursor position all the time
 set showcmd                     " display incomplete commands
 set incsearch                   " do incremental searching
 set wrapscan                    " search after EOF
-set backup                      " keep a backup file
 set backupdir=~/.vim/backup     " keep backups in a dir to avoid clutter
 set ignorecase                  " ignores case when searching
 set smartcase                   " search is now case sensitive
