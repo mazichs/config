@@ -48,6 +48,7 @@ Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline_solarized_normal_green = 1
+let g:airline_solarized_dark_inactive_border = 1
 
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
