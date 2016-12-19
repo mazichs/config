@@ -11,7 +11,7 @@
 " Maintainer:                                                           "
 "   Stephen Mazich <stephen.mazich@gmail.com>                           "
 "                                                                       "
-" Version: 1.5                                                          "
+" Version: 1.6                                                          "
 "                                                                       "
 " Created: 07/2015                                                      "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -24,11 +24,6 @@ set nocompatible
 "---------------------
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_java_javac_config_file_enabled = 1
 nmap \s :SyntasticToggleMode<CR>
@@ -49,6 +44,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline_solarized_normal_green = 1
 let g:airline_solarized_dark_inactive_border = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline_skip_empty_sections = 1
 
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -67,8 +64,13 @@ set smartcase                   " search is now case sensitive
 set hlsearch                    " matching search results are highlighted
 set noeb vb t_vb=               " disable that damn beeping
 set noshowmode                  " disable default mode display
+set wildmenu                    " display completion matches in a status line
 set expandtab                   " tabs are spaces (even if I personally disagree)
 set tabstop=4 shiftwidth=4 softtabstop=4    " Preffered tab setup
+
+" Show a few lines of context around the cursor.  Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -124,6 +126,8 @@ if has('clipboard')
     vmap <Leader>P "+P
 endif
 
+" Don't use Ex mode, use Q for formatting.
+map Q gq
 nmap j gj
 nmap k gk
 nmap <silent>\n :set nu!<CR>
@@ -143,10 +147,7 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
-"Powerline Setup
-"python3 from powerline.vim import setup as powerline_setup
-"python3 powerline_setup()
-"python3 del powerline_setup
+"Airline Configuration
 function! AirlineInit()
     let spc = g:airline_symbols.space
     let linenbr = g:airline_symbols.linenr
