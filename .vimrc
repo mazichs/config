@@ -147,6 +147,10 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
+" Improved ColorColumn highlighting
+highlight ColorColumn cterm=reverse
+call matchadd('ColorColumn', '\%>80v.', 100)
+
 "Airline Configuration
 function! AirlineInit()
     let spc = g:airline_symbols.space
