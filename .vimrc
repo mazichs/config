@@ -23,11 +23,12 @@ set nocompatible
 "-- Plugin Settings --
 "---------------------
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/syntastic'
-let g:syntastic_check_on_wq = 0
-let g:syntastic_java_javac_config_file_enabled = 1
-nmap \s :SyntasticToggleMode<CR>
-nmap \e :SyntasticCheck<CR>
+"Plug 'scrooloose/syntastic'
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_java_javac_config_file_enabled = 1
+"nmap \s :SyntasticToggleMode<CR>
+"nmap \e :SyntasticCheck<CR>
+Plug 'w0rp/ale'
 
 Plug 'scrooloose/nerdcommenter'
 
@@ -132,6 +133,7 @@ nmap j gj
 nmap k gk
 nmap <silent>\n :set nu!<CR>
 nmap <silent>\c :noh<CR>
+nmap <silent>\h :hi COLORCOLUMN NONE<CR>
 
 "fat fingers remapping
 :command WQ wq
