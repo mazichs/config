@@ -3,7 +3,7 @@ URxvt.depth: 32
 URxvt.scrollBar_right: true
 URxvt.scrollstyle: plain
 URxvt.scrollBar: false
-URxvt*font: xft:Terminess\ Powerline:pixelsize=15
+URxvt*font: xft:Anonymice\ Powerline:pixelsize=16
 URxvt*internalBorder: 0
 URxvt*iconFile: /usr/share/icons/Paper/48x48@2x/apps/utilities-terminal.png
 

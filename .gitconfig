@@ -3,17 +3,9 @@
 	email = stephen.mazich@gmail.com
 [core]
 	editor = vim
-	autocrlf = false
+	autocrlf = input
 	safecrlf = true
-[alias]
-	co = checkout
-	cm = commit
-	st = status
-	br = branch
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-	type = cat-file -t
-	dump = cat-file -p
+	excludesfile = ./.gitignore_global
 [cola]
-	fontdiff = Terminess Powerline,11,-1,5,50,0,0,0,0,0
 	tabwidth = 4
-	textwidth = 78
+	textwidth = 80
