@@ -99,3 +99,6 @@ bindkey '^Z' fancy-ctrl-z
 eval `dircolors /home/mazichs/dircolors-solarized/dircolors.ansi-dark`
 
 setopt IGNORE_EOF
+
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH

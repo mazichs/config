@@ -29,6 +29,7 @@ call plug#begin('~/.vim/plugged')
 "nmap \s :SyntasticToggleMode<CR>
 "nmap \e :SyntasticCheck<CR>
 Plug 'w0rp/ale'
+nmap /s :ALEToggleBuffer<CR>
 
 Plug 'scrooloose/nerdcommenter'
 
@@ -46,6 +47,7 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline_solarized_normal_green = 1
 let g:airline_solarized_dark_inactive_border = 1
 let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 let g:airline_skip_empty_sections = 1
 
 Plug 'vim-airline/vim-airline-themes'
@@ -159,11 +161,11 @@ function! AirlineInit()
     let linenbr = g:airline_symbols.linenr
     "let g:airline_section_b = airline#section#create_left(['branch','path'])
     "let g:airline_section_c = airline#section#create([])
-    let g:airline_section_x = airline#section#create_right(['ffenc','filetype'])
-    let g:airline_section_y = airline#section#create(['%p%%'])
+    "let g:airline_section_x = airline#section#create_right(['ffenc','filetype'])
+    "let g:airline_section_y = airline#section#create(['%p%%'])
     call airline#parts#define_raw('linenr', '%l')
     call airline#parts#define_accent('linenr', 'bold')
-    let g:airline_section_z = airline#section#create([linenbr.spc, 'linenr',':%c'])
+    let g:airline_section_z = airline#section#create([linenbr.spc, 'linenr','maxlinenr',':%c'])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
 set laststatus=2
