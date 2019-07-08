@@ -82,8 +82,8 @@ endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-    " For all text files set 'textwidth' to 78 characters.
-    autocmd FileType text setlocal textwidth=78
+    " For all text files set 'textwidth' to 80 characters.
+    autocmd FileType text setlocal textwidth=80
 
     " disable bell
     autocmd GUIEnter * set vb t_vb=
