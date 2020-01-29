@@ -23,23 +23,29 @@ set nocompatible
 "-- Plugin Settings --
 "---------------------
 call plug#begin('~/.vim/plugged')
-"Plug 'scrooloose/syntastic'
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_java_javac_config_file_enabled = 1
-"nmap \s :SyntasticToggleMode<CR>
-"nmap \e :SyntasticCheck<CR>
-Plug 'w0rp/ale'
-nmap /s :ALEToggleBuffer<CR>
-
-Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+let g:syntastic_check_on_wq = 0
+let g:syntastic_java_javac_config_file_enabled = 1
+nmap \s :SyntasticToggleMode<CR>
+nmap \e :SyntasticCheck<CR>
 
 Plug 'altercation/vim-colors-solarized'
 
 Plug 'ervandew/supertab'
 
+Plug 'fatih/vim-go'
+
+Plug 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDToggleCheckAllLines = 1
+
 Plug 'sickill/vim-pasta'
 
 Plug 'tpope/vim-fugitive'
+
+"Plug 'w0rp/ale'
+"nmap /s :ALEToggleBuffer<CR>
 
 Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
@@ -51,6 +57,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline_skip_empty_sections = 1
 
 Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
 "---------------------
 "-- Plugin Settings --
@@ -135,7 +142,8 @@ nmap j gj
 nmap k gk
 nmap <silent>\n :set nu!<CR>
 nmap <silent>\c :noh<CR>
-nmap <silent>\h :hi COLORCOLUMN NONE<CR>
+nmap <silent>\h :hi ColorColumn NONE<CR>
+nmap <silent>\i :hi ColorColumn cterm=reverse<CR>
 
 "fat fingers remapping
 :command WQ wq
@@ -165,7 +173,7 @@ function! AirlineInit()
     "let g:airline_section_y = airline#section#create(['%p%%'])
     call airline#parts#define_raw('linenr', '%l')
     call airline#parts#define_accent('linenr', 'bold')
-    let g:airline_section_z = airline#section#create([linenbr.spc, 'linenr','maxlinenr',':%c'])
+    let g:airline_section_z = airline#section#create([linenbr.spc,'linenr','maxlinenr',':%c'])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
 set laststatus=2
