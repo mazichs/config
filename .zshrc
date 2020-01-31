@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(common-aliases docker docker-compose git vi-mode)
+plugins=(common-aliases docker docker-compose git vi-mode colored-man-pages)
 
 # User configuration
 
@@ -80,7 +80,8 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias tmux="tmux -2"
+alias tmux="/usr/local/bin/tmux -2"
+alias gd='git diff --color'
 
 setopt NO_BEEP
 #enables ctrl-z restore
@@ -102,7 +103,3 @@ setopt IGNORE_EOF
 
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
