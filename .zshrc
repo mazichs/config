@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(common-aliases docker docker-compose git vi-mode colored-man-pages)
+plugins=(docker docker-compose git vi-mode colored-man-pages)
 
 # User configuration
 
@@ -82,6 +82,7 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tmux="tmux -2"
 alias gd="git diff --color"
+alias zshrc="vim ~/.zshrc"
 
 setopt NO_BEEP
 #enables ctrl-z restore
