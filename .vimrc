@@ -35,12 +35,17 @@ Plug 'ervandew/supertab'
 
 Plug 'fatih/vim-go'
 
+Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
+
 Plug 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 Plug 'sickill/vim-pasta'
+
+Plug 'tpope/vim-abolish'
 
 Plug 'tpope/vim-fugitive'
 
@@ -144,6 +149,7 @@ nmap <silent>\n :set nu!<CR>
 nmap <silent>\c :noh<CR>
 nmap <silent>\h :hi ColorColumn NONE<CR>
 nmap <silent>\i :hi ColorColumn cterm=reverse<CR>
+imap jj <ESC>
 
 "fat fingers remapping
 :command WQ wq
