@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="pygmalion"
+ZSH_THEME="pygmalion-wrap"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker docker-compose git vi-mode colored-man-pages)
+plugins=(git colored-man-pages zsh-vi-mode zsh-syntax-highlighting zsh-autosuggestions)
 
 # User configuration
 
@@ -83,6 +83,10 @@ export EDITOR='vim'
 alias tmux="tmux -2"
 alias gd="git diff --color"
 alias zshrc="vim ~/.zshrc"
+alias l="ls -lahF"
+alias ll="ls -lhF"
+alias la="ls -lAhF"
+alias lt="ls -lhrtF"
 
 setopt NO_BEEP
 #enables ctrl-z restore
@@ -101,6 +105,9 @@ bindkey '^Z' fancy-ctrl-z
 eval `dircolors /home/mazichs/dircolors-solarized/dircolors.ansi-dark`
 
 setopt IGNORE_EOF
+
+# Ignore common commands
+HISTORY_IGNORE="(cd|pwd|exit|clear|l|ll|la|lt|ls)"
 
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
